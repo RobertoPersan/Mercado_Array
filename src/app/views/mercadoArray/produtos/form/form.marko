@@ -1,0 +1,116 @@
+<html lang="pt-BR" >
+
+    <head>
+        <!-- CSS -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Mercado Array nos preços</title>
+
+        <link rel="stylesheet" href="../estatico/css/style.css">
+        <link rel="stylesheet" href="resetar.css">
+        <link rel="stylesheet" href="style.css">
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        
+        <script language="javascript" src="script.js"></script>
+        
+    </head>
+
+     <body class="container-responsive-sm">
+        <header>
+            
+            <section >
+                <h1><img src="../estatico/imagens/array.png" width="30" height="30" class="d-inline-block align-top img" alt="Chania" width="1000" height="212"></h1>
+            </section>
+
+           
+            <nav class="navbar navbar-expand-lg  navbar-light bg">
+
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <section class="navbar-toggler-icon"></section>
+                </button>
+
+                <section class="collapse navbar-collapse nav nav-tabs" id="navbarNavDropdown">
+                    <ul class="navbar-nav ">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/" target="_self">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/listaFun" target="_self">Funcionários</a>
+                        </li>
+
+                        <li class="nav-item ">
+                            <a class="nav-link text-white" href="/funcionarios/form" target="_self">Cadastrar funcionários</a>
+                        </li>
+                        
+                        <li class="nav-item active">
+                            <a class="nav-link text-white" href="/listaPro" target="_self">Produtos</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/produtos/form" target="_self">Cadastrar produtos</a>
+                        </li> 
+
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#"></a>
+                        </li>
+                    </ul>
+                </section>
+            </nav>
+        </header>
+        <main>
+ 
+            <p class="text-center text-uppercase font-weight-bold bg-warning"> Cadastro de Produto </p>
+
+            <section class="form-row">
+                <form class="col-md-4 mb-3" action="/produtos" method="post">
+                    <if(data.produto.id)>
+                        <section>
+                            <input type="hidden" name="_method" value="put">
+                        </section>
+                    </if>
+
+                    <input type="hidden" id="id" name="id" value=`${data.produto.id}`/>
+
+                    <section class="col-md-9 mb-3">
+                        <label for="nome">Nome:</label>
+                        <input class="form-control" type="text" id="nome" name="nome" value=`${data.produto.nome}` placeholder="digite o Nome do produto"/>
+                    </section>
+
+                    <section class="col-md-9 mb-3">
+                        <label for="tipo">Tipo:</label>
+                        <input class="form-control" type="text" id="tipo" name="tipo" value=`${data.produto.tipo}` placeholder="digite o Tipo do produto"/>
+                    </section>
+                    
+                    <section class="col-md-9 mb-3">
+                        <label for="preco">Preço:</label>
+                        <input class="form-control" type="number" id="preco" name="preco" value=`${data.produto.preco}` placeholder="digite o Preço do produto"/>
+                    </section>
+                    
+                    <input class="col-md-9 mb-3 form-control bg-warning" type="submit" value="Salvar" />
+                </form> 
+            </section>
+        </main> 
+        <!-- Footer -->
+        <footer class="page-footer font-small bg ">
+            <!-- Copyright -->
+            <section class="footer-copyright text-center py-3 text-white">                
+                © 2020 Copyright: Mercado-Array de Preços <br>               
+                        
+                Equipe:| José Roberto | Leonardo |            
+            </section>
+            <!-- Copyright -->
+
+        </footer>
+        <!-- Footer -->         
+
+        
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    </body>
+</html>
