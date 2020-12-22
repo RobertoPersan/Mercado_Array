@@ -1,0 +1,7 @@
+<li class="nav-item">
+     <a class="nav-link" href="/funcionarios/form" target="_self">Cadastrar Funcionário</a>
+</li>
+
+<li class="nav-item">
+    <a class="nav-link" href="/produtos/form" target="_self">Cadastrar Produto</a>
+</li>
