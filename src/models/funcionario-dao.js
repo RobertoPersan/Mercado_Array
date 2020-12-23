@@ -21,9 +21,9 @@ class FunDao {
 
     adiciona(funci){
         return new Promise( (resolver, rejeitar) =>{
-            const sql = `INSERT INTO FUNCIONARIOS(nome, sobrenome, funcao, admicao, salario, sexo) values (?,?,?,?,?,?)`
+            const sql = `INSERT INTO FUNCIONARIOS(nome, sobrenome, funcao, admissao, salario, sexo) values (?,?,?,?,?,?)`
 
-            this._conexao.query(sql,[funci.nome,funci.sobrenome,funci.funcao,funci.admicao,funci.salario,funci.sexo],
+            this._conexao.query(sql,[funci.nome,funci.sobrenome,funci.funcao,funci.admissao,funci.salario,funci.sexo],
                 function(msgErro){
                     if(msgErro){
                         console.log(msgErro)

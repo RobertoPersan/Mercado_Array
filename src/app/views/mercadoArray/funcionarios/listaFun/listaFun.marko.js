@@ -32,7 +32,7 @@ function render(input, out, __component, component, state) {
       "</td><td scope=row>" +
       marko_escapeXml(itemFun.funcao) +
       "</td> <td scope=row>" +
-      marko_escapeXml(itemFun.admicao) +
+      marko_escapeXml(itemFun.admissao) +
       "</td><td scope=row>" +
       marko_escapeXml(itemFun.salario) +
       "</td><td scope=row>" +
