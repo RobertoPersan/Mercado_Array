@@ -7,7 +7,7 @@ class ProDao {
 
         return new Promise( (resolver, rejeitar) =>{
 
-            const sql =  `SELECT * FROM produtos`
+            const sql =  'SELECT * FROM produtos'
 
             this._conexao.query(sql, (msgErro, resultados) => {
                     if(msgErro){ 

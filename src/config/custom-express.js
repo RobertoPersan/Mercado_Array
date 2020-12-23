@@ -8,7 +8,7 @@ const app = express(); // Instanciando o express / Criando um objeto atravez do 
 const methodOverride = require('method-override');
 
 app.use(bodyParser.urlencoded({ // Middleware/ Responsavel por transformar o codigo url em um codigo usavel em javascript
-    extended: true
+    extended:true
 }));
 
 app.use(methodOverride(function (req, res) {
