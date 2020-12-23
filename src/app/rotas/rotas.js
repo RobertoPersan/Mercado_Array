@@ -10,7 +10,7 @@ module.exports = (app) => { // arrow function
         res.marko(
             require('../views/mercadoArray/lista/index.marko')
         )
-    }),
+    });
 
 
 
@@ -25,11 +25,11 @@ module.exports = (app) => { // arrow function
                 
             })
         }    
-    ),
+    );
 
     app.get('/funcionarios/form', function(req, res){// Codigo que importa o formulario de funcionarios
         res.marko(require('../views/mercadoArray/funcionarios/form/form.marko'), {funcionario: {}})
-    })
+    });
 
 
     app.get('/funcionarios/form/:id', function(reque, res){// Codigo que edita o formulario de funcionario
@@ -42,7 +42,7 @@ module.exports = (app) => { // arrow function
             ))
             .catch(msgErro => console.log(msgErro))
        
-    })
+    });
 
 
     app.delete("/funcionarios/:id", (req, resp) =>{
@@ -61,7 +61,7 @@ module.exports = (app) => { // arrow function
 
         const funDao = new FunDao(conexao);
         funDao.adiciona(req.body).then(res.redirect('/listaFun')).catch(erro => console.log(erro))
-    })
+    });
 
     app.put('/funcionarios', function(req, res){
        // console.log(req.body) // Middleware, um software que fica no middle
@@ -70,7 +70,7 @@ module.exports = (app) => { // arrow function
         funDao.altera(req.body)
             .then(res.redirect('/listaFun'))
             .catch(erro => console.log(erro))
-    })
+    });
 
 
 
@@ -84,11 +84,11 @@ module.exports = (app) => { // arrow function
                 ).catch (msgErro => console.log(msgErro))
             )
         }
-    )
+    );
 
     app.get('/produtos/form', function(req, res){// Codigo que importa o formulario de produtos
         res.marko(require('../views/mercadoArray/produtos/form/form.marko'), {produto: {}})
-    })
+    });
 
     
     app.get('/produtos/form/:id', function(reque, res){// Codigo que edita o formulario de produtos
@@ -101,13 +101,13 @@ module.exports = (app) => { // arrow function
             ))
             .catch(msgErro => console.log(msgErro))
        
-    })
+    });
 
     app.post('/produtos', function(req, res){
         //console.log(req.body)
         const proDao = new ProDao(conexao);
         proDao.adiciona(req.body).then(res.redirect('/listaPro')).catch(erro => console.log(erro))
-    })
+    });
 
     app.put('/produtos', function(req, res){
         //console.log(req.body)
@@ -115,7 +115,7 @@ module.exports = (app) => { // arrow function
         proDao.altera(req.body)
             .then(res.redirect('/listaPro'))
             .catch(erro => console.log(erro))
-    })
+    });
 
 
     app.delete("/produtos/:id", (req, resp) =>{

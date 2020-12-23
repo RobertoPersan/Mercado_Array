@@ -10,7 +10,7 @@ class Tabelas{
     // Criando tabela no servidor
     criarTabelaFun(){// Metodo é uma função dentro de uma classe
 
-        const sql = 'CREATE TABLE IF NOT EXISTS funcionarios (id int NOT NULL AUTO_INCREMENT, nome varchar(50), sobrenome varchar(50), funcao varchar(50), admicao varchar(25), salario REAL, sexo varchar(10), PRIMARY KEY(id))'
+        const sql = 'CREATE TABLE IF NOT EXISTS funcionarios (id int NOT NULL AUTO_INCREMENT, nome varchar(50), sobrenome varchar(50), funcao varchar(50), admissao varchar(25), salario REAL, sexo varchar(10), PRIMARY KEY(id))'
 
         this.conexao.query(sql, msgErro => {
             if(msgErro){
