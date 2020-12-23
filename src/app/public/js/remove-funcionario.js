@@ -12,7 +12,6 @@ tabelaFun.addEventListener('click', (evento) =>{
                 tr.remove()
             })
             .catch(msgErro => {
-                //alert('NÃO FOI POSSIVEL REMOVER O PRODUTO')
                 console.log(msgErro)
             })
     }
