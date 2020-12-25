@@ -17,7 +17,7 @@ class FunDao {
                     }        
             })
         }) 
-    }
+    };
 
     adiciona(funci){
         return new Promise( (resolver, rejeitar) =>{
@@ -34,7 +34,7 @@ class FunDao {
                 })
 
         })
-    }
+    };
 
     remover(id){
         return new Promise( (resolver, rejeitar) =>{
@@ -52,7 +52,7 @@ class FunDao {
                 })
 
         })
-    }
+    };
 
     buscaFunId(id){
         return new Promise((resolver, rejeitar) => {
@@ -70,7 +70,7 @@ class FunDao {
                     }
             })
         })
-    }
+    };
 
 
     altera(funci){
@@ -90,6 +90,6 @@ class FunDao {
 
         })
     }
-}
+};
 
 module.exports = FunDao
