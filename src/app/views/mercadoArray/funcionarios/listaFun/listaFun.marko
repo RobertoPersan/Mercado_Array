@@ -62,7 +62,7 @@
         <p class="text-center text-uppercase font-weight-bold bg">Lista de Funcionários</p>
             
             <section class="container">           
-                <table id="" class="table table-striped thead-dark mt-2 table-hover table-responsive-sm">
+                <table id="funcionarios" class="table table-striped thead-dark mt-2 table-hover table-responsive-sm">
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Nome</th>
@@ -75,7 +75,7 @@
                         <th scope="col">Remover</th>
                     </tr>
                     <for|itemFun| of=data.funcionarios>
-                        <tr>
+                        <tr id=`funcionario_${itemFun.id}`>
                             <td scope="row">${itemFun.id}</td>
                             <td scope="row">${itemFun.nome}</td>
                             <td scope="row">${itemFun.sobrenome}</td>

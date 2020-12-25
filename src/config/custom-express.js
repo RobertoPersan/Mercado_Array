@@ -11,6 +11,10 @@ app.use(bodyParser.urlencoded({ // Middleware/ Responsavel por transformar o cod
     extended:true
 }));
 
+
+app.use('/estatico', express.static('src/app/public'));
+
+
 app.use(methodOverride(function (req, res) {
     if (req.body && typeof req.body === 'object' && '_method' in req.body){
         var method = req.body._method;
@@ -19,7 +23,6 @@ app.use(methodOverride(function (req, res) {
     }
 }))
 
-app.use('/estatico', express.static('src/app/public'));
 
 const rotas = require('../app/rotas/rotas.js');// Fazendo busca do arquivo em rotas
 

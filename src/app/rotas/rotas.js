@@ -45,6 +45,14 @@ module.exports = (app) => { // arrow function
     });
 
 
+    app.post('/funcionarios', function(req, res){
+        //console.log(req.body) // Middleware, um software que fica no middle
+
+        const funDao = new FunDao(conexao);
+        funDao.adiciona(req.body).then(res.redirect('/listaFun')).catch(erro => console.log(erro))
+    });
+
+
     app.delete("/funcionarios/:id", (req, resp) =>{
         const id = req.params.id;
         const funDao = new FunDao(conexao);
@@ -55,13 +63,6 @@ module.exports = (app) => { // arrow function
 
     });
 
-
-    app.post('/funcionarios', function(req, res){
-        //console.log(req.body) // Middleware, um software que fica no middle
-
-        const funDao = new FunDao(conexao);
-        funDao.adiciona(req.body).then(res.redirect('/listaFun')).catch(erro => console.log(erro))
-    });
 
     app.put('/funcionarios', function(req, res){
        // console.log(req.body) // Middleware, um software que fica no middle
@@ -129,3 +130,4 @@ module.exports = (app) => { // arrow function
     });
     
 }
+
