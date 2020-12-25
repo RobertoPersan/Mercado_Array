@@ -28,14 +28,14 @@ module.exports = (app) => { // arrow function
     );
 
     app.get('/funcionarios/form', function(req, res){// Codigo que importa o formulario de funcionarios
-        res.marko(require('../views/mercadoArray/funcionarios/form/form.marko'), {funcionario: {}})
+        res.marko(require('../views/mercadoArray/funcionarios/form/form.marko'), {funcionario:{}})
     });
 
 
     app.get('/funcionarios/form/:id', function(reque, res){// Codigo que edita o formulario de funcionario
         const id = reque.params.id;
         const funDao = new FunDao(conexao)// buscando o funcionario de id (nº x) no banco de dados
-        funDao.buscaFunId(id)
+        funDao.buscaPorId(id)
             .then(funcionario => 
                 res.marko(require('../views/mercadoArray/funcionarios/form/form.marko'),
                 {funcionario: funcionario}
@@ -53,6 +53,17 @@ module.exports = (app) => { // arrow function
     });
 
 
+    app.put('/funcionarios', function(req, res){
+        // console.log(req.body) // Middleware, um software que fica no middle
+ 
+        const funDao = new FunDao(conexao);
+        funDao.altera(req.body)
+             .then(res.redirect('/listaFun'))
+             .catch(erro => console.log(erro))
+    });
+
+
+
     app.delete("/funcionarios/:id", (req, resp) =>{
         const id = req.params.id;
         const funDao = new FunDao(conexao);
@@ -62,17 +73,6 @@ module.exports = (app) => { // arrow function
             .catch( msgErro => console.log(msgErro))
 
     });
-
-
-    app.put('/funcionarios', function(req, res){
-       // console.log(req.body) // Middleware, um software que fica no middle
-
-        const funDao = new FunDao(conexao);
-        funDao.altera(req.body)
-            .then(res.redirect('/listaFun'))
-            .catch(erro => console.log(erro))
-    });
-
 
 
     app.get('/listaPro', function(req, res){ // Esse é o codigo que importa o html de produtos

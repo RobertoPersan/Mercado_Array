@@ -70,11 +70,9 @@
             <section class="form-row">
 
                 <form class="form-row" action="/funcionarios" method="post">
-                   <if(data.funcionario.id)>
-                        <section>
-                            <input type="hidden" name="_method" value="put">
-                        </section>
-                    </if>
+                    <section if(data.funcionario.id)>
+                        <input type="hidden" name="_method" value="put">
+                    </section>
 
                     <input type="hidden" id="id" name="id" value=`${data.funcionario.id}`/>
 

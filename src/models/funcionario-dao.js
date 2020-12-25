@@ -37,6 +37,8 @@ class FunDao {
     }
 
     remover(id){
+        console.log(`id do funcionario que se quer remover ${id}`);
+
         return new Promise( (resolver, rejeitar) =>{
             const sql = `DELETE FROM funcionarios WHERE id=?`
 
@@ -54,7 +56,7 @@ class FunDao {
         })
     }
 
-    buscaFunId(id){
+    buscaPorId(id){
         return new Promise((resolver, rejeitar) => {
             const sql = `SELECT * FROM funcionarios WHERE id=?`
 
@@ -73,12 +75,12 @@ class FunDao {
     }
 
 
-    altera(funci){
+    altera(funcionario){
         return new Promise( (resolver, rejeitar) =>{
-            const id = funci.id;
-            const sql = `UPDATE funcionarios SET ? WHERE id=?`;
+            const id = funcionario.id;
+            const sql = `UPDATE funcionarios SET ? WHERE id=?`
 
-            this._conexao.query(sql, [funci,id],
+            this._conexao.query(sql, [funcionario,id],
                 function(msgErro){
                     if(msgErro){
                         console.log(msgErro)
