@@ -17,7 +17,7 @@ class ProDao {
                     }        
             })
         }) 
-    };
+    }
 
     adiciona(prod){
         return new Promise( (resolver, rejeitar) =>{
@@ -34,7 +34,7 @@ class ProDao {
                 })
 
         })
-    };
+    }
 
 
     remover(id){
@@ -53,7 +53,7 @@ class ProDao {
                 })
 
         })
-    };
+    }
 
     buscaPorId(id){
         return new Promise((resolver, rejeitar) => {
@@ -71,7 +71,7 @@ class ProDao {
                     }
             })
         })
-    };
+    }
 
     altera(prod){
         return new Promise( (resolver, rejeitar) =>{
@@ -90,7 +90,7 @@ class ProDao {
 
         })
     }
-};
+}
 
 
 
