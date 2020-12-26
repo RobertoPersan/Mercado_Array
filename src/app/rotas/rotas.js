@@ -54,8 +54,7 @@ module.exports = (app) => { // arrow function
 
 
     app.put('/funcionarios', function(req, res){
-        // console.log(req.body) // Middleware, um software que fica no middle
- 
+       
         const funDao = new FunDao(conexao);
         funDao.altera(req.body)
              .then(res.redirect('/listaFun'))
@@ -68,7 +67,7 @@ module.exports = (app) => { // arrow function
         const id = req.params.id;
         const funDao = new FunDao(conexao);
 
-        funDao.remove(id)
+        funDao.remover(id)
             .then( () => resp.status(200).end())
             .catch( msgErro => console.log(msgErro))
 

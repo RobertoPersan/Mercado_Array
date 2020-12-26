@@ -37,10 +37,9 @@ class FunDao {
     }
 
     remover(id){
-        console.log(`id do funcionario que se quer remover ${id}`);
 
         return new Promise( (resolver, rejeitar) =>{
-            const sql = `DELETE FROM funcionarios WHERE id=?`
+            const sql = 'DELETE FROM funcionarios WHERE id=?'
 
             this._conexao.query(sql,
                 id,
