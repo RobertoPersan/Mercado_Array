@@ -9,7 +9,7 @@ tabelaPro.addEventListener('click', (evento) =>{
             .then(res => {
                 //Função para remover linha da tabela
                 let tr = elementoClicado.closest(`#produto_${produtoId}`)
-                tr.remover()
+                tr.remove()
             })
             .catch(msgErro => {
                 //alert('NÃO FOI POSSIVEL REMOVER O PRODUTO')
